@@ -60,11 +60,27 @@ VALUES(11,'용복','M')
 
 Join - 여러 테이블 합치기 
 Many to One Relationship
+SELECT{column}FROM{table}
+INNER JOIN {other_table}ON {condition}
 
+SELECT player.id, player.name, player.gender,track.length,track.best_score
+FROM player INNER JOIN track ON player.track_id = track.id
 
+만약에 한 선수가 여러 종목에 출전한다면?
 
+player_track table
 
+player_id  track_id
+   1          1
+   1          2
+   1          3
+   2          2
+   3          2
 
+ 이렇게 테이블을 만들어 준다 
 
+SELECT player.name,track.length FROM player_track INNER JOIN track ON player
+ON player_track.player_id = player_id INNER JOIN track ON 
+player_track.track_id = track_id
 
 
